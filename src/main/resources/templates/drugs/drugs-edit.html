@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Drugs Edit</title>
+</head>
+<body>
+<div layout:fragment="content">
+    <div class="row">
+        <div class="col-12">
+            <div class="card mt-2">
+                <div class="card-header">
+                    <h4>New Drug</h4>
+                </div>
+                <div class="card-body">
+                    <form action="#" th:action="@{/drugs/edit-drug}" th:object="${drug}" method="post">
+                        <input hidden type="number" th:field="*{id}" id="id">
+                        <div class="form-group">
+                            <label for="nameDrug">Name drug</label>
+                            <input type="text" class="form-control" id="nameDrug" aria-describedby="titleHelp"
+                                   placeholder="Enter name" th:field="*{name}" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="manufacturer">Manufacturer</label>
+                            <select name="Manufacturer" id="manufacturer">
+                                <option th:each="manufacturer : ${manufacturers}"
+                                        th:text="${manufacturer.getName()}"
+                                        th:value="${manufacturer.getId()}"
+                                ></option>
+                            </select>
+                        </div>
+                        <div hidden class="form-group">
+                            <label for="dateOfApproval">Date Of Approval</label>
+                            <input type="date" class="form-control" id="dateOfApproval" aria-describedby="titleHelp"
+                                   placeholder="Enter title" th:field="*{dateOfApproval}">
+                        </div>
+                        <div class="form-group">
+                            <label >Date Of Approval</label>
+                            <input type="date" class="form-control" aria-describedby="titleHelp"
+                                   placeholder="Enter date" name="date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="treatmentFor">Treatment For</label>
+                            <input type="text" class="form-control" id="treatmentFor" aria-describedby="titleHelp"
+                                   placeholder="Enter treatment" th:field="*{treatmentFor}" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Description</label>
+                            <input type="text" class="form-control" id="description" aria-describedby="titleHelp"
+                                   placeholder="Enter description" th:field="*{description}" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Drugs</title>
+</head>
+<body>
+
+<div layout:fragment="content">
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card mb-2 mt-2">
+                <div class="card-header">
+                    Drugs
+                </div>
+                <div class="card-body">
+                    <table class="table table-sm table-hover">
+                        <thead>
+                        <tr>
+                            <th>name</th>
+                            <th>manufacturer</th>
+                            <th>approval date</th>
+                            <th>treatment for</th>
+                            <th>description</th>
+                            <th>Operations</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="drug : ${drugs}">
+                            <td th:text="${drug.getName()}"></td>
+                            <td th:text="${drug.getManufacturer().getName()}"></td>
+                            <td th:text="${#calendars.format(drug.getDateOfApproval(),'dd MMMM yyyy')}"></td>
+                            <td th:text="${drug.getTreatmentFor()}"></td>
+                            <td th:text="${drug.getDescription()}"></td>
+                            <td>
+                                <form th:action="@{/drugs/{id}(id=${drug.getId()})}"  method="post">
+                                    <button type="submit" class="btn btn-primary">Delete</button>
+                                </form>
+                                </td>
+                            <td>
+                                <form th:action="@{/drugs/edit/{id} (id=${drug.getId()})}"  method="get">
+                                    <button type="submit" class="btn btn-primary">Edit</button>
+                                </form>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12">
+            <div class="card mt-2">
+                <div class="card-header">
+                    <a type="button" class="btn btn-primary" th:href="@{/drugs/new}">Add Drug</a>
+                    <a type="button" class="btn btn-primary" th:href="@{/manufacturer/new}">Add Manufacturer</a>
+                    <a type="button" class="btn btn-primary" th:href="@{/manufacturer/list-manufacturers}">List Manufacturer</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

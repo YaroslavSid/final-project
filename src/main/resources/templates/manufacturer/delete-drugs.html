@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Error</title>
+</head>
+<body>
+<div layout:fragment="content">
+    <div class="row">
+        <div class="col-12">
+            <div class="card mt-2">
+                <div class="card-header">
+                    <h1 STYLE="color: red">Ooops, something went wrong. First remove the drugs from this manufacturer.</h1>
+                    <a type="button" class="btn btn-primary" th:href="@{/drugs}">Drugs list</a>
+                    <a type="button" class="btn btn-primary" th:href="@{/manufacturer/list-manufacturers}">Manufacturers list</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
