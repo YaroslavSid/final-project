@@ -12,8 +12,9 @@ import java.util.List;
 @Repository
 public interface DrugsDAO extends JpaRepository<Drugs, Integer> {
 
+    // todo
     @Query("SELECT d FROM Drugs d WHERE d.name= ?1")
-    Drugs finaByName(String drugName);
+    Drugs findByName(String drugName);
 
 
     @Query("SELECT d from Drugs d where d.dateOfApproval BETWEEN :from AND :to")

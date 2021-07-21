@@ -1,7 +1,7 @@
 package com.alevel.telegram.bot.config;
 
 import com.alevel.telegram.bot.TelegramBotAPI;
-import com.alevel.telegram.bot.processors.Processor;
+import com.alevel.telegram.bot.processor.Processor;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.beans.factory.annotation.Value;

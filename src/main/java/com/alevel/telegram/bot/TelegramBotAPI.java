@@ -1,6 +1,6 @@
 package com.alevel.telegram.bot;
 
-import com.alevel.telegram.bot.processors.Processor;
+import com.alevel.telegram.bot.processor.Processor;
 import org.telegram.telegrambots.bots.TelegramWebhookBot;
 import org.telegram.telegrambots.meta.api.methods.BotApiMethod;
 import org.telegram.telegrambots.meta.api.objects.Update;
