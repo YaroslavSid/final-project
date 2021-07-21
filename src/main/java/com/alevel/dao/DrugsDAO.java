@@ -20,6 +20,6 @@ public interface DrugsDAO extends JpaRepository<Drugs, Integer> {
     @Query("SELECT d from Drugs d where d.dateOfApproval BETWEEN :from AND :to")
     List<Drugs> findDrugsByDateOfApprovalBetween(@Param("from") Date from, @Param("to") Date to);
 
-    Drugs findDrugsByManufacturerName(String nameManufacturer);
+    List<Drugs> findDrugsByManufacturerName(String nameManufacturer);
 
 }

@@ -48,9 +48,9 @@ public class ManufacturerController {
 
     @PostMapping("/{name}")
     public String deleteManufacturer(@PathVariable String name) {
-        Drugs drug = drugsService.getByManufacturer(name);
+        List<Drugs> drug = drugsService.getByManufacturer(name);
         Integer id = manufacturerService.getManufacturer(name).getId();
-        if (drug != null) {
+        if (!drug.isEmpty()) {
             return "/manufacturer/delete-drugs";
         } else {
             manufacturerService.deleteManufacturer(id);

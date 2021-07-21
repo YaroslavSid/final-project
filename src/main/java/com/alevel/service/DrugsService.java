@@ -22,5 +22,5 @@ public interface DrugsService {
 
     List<String> findAllDrugsByDateOfApproval (Date from, Date to);
 
-    Drugs getByManufacturer (String nameManufacturer);
+    List<Drugs> getByManufacturer (String nameManufacturer);
 }

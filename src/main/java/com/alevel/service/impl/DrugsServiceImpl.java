@@ -71,7 +71,7 @@ public class DrugsServiceImpl implements DrugsService {
 
     @Transactional
     @Override
-    public Drugs getByManufacturer(String nameManufacturer) {
+    public List<Drugs> getByManufacturer(String nameManufacturer) {
         return drugsDAO.findDrugsByManufacturerName(nameManufacturer);
     }
 
