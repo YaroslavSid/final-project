@@ -12,8 +12,8 @@ import java.util.List;
 @Repository
 public interface DrugsDAO extends JpaRepository<Drugs, Integer> {
 
-    // todo
-    @Query("SELECT d FROM Drugs d WHERE d.name= ?1")
+
+//    @Query("SELECT d FROM Drugs d WHERE d.name= ?1")
     Drugs findByName(String drugName);
 
 

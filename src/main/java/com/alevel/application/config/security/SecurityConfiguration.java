@@ -26,9 +26,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        // todo vise versa
         http.authorizeRequests()
                 .antMatchers("/bot").permitAll()
+                .antMatchers("/swagger-ui/index.html").permitAll()
                 .anyRequest().hasAuthority("ADMIN")
                 .and()
                 .formLogin().defaultSuccessUrl("/drugs", true).permitAll();
