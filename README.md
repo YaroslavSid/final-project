@@ -28,6 +28,8 @@ https://api.telegram.org/bot1895334926:AAGqOrP8A0bKsCsMSX7ArWIsVjHMA5gg2Z8/setWe
 
 5)After starting you must log in with username = admin   
                                       password = admin
-6) http://localhost:8082
+6) (web)  http://localhost:8082
+
+7) (telegram bot (in search field )) t.me/PharmaceuticalSourceOfDrugsBot
 
 Good luck!!!
